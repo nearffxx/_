@@ -1,0 +1,20 @@
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/bionic64"
+  config.vm.network "forwarded_port", guest: 22, host: 2022, id: "ssh", host_ip: "0.0.0.0"
+  config.vm.synced_folder "~/mnt", "/mnt"
+  #~/vagrant plugin install vagrant-disksize
+  config.disksize.size = "4TB"
+
+  config.vm.provider "virtualbox" do |vb|
+    vb.cpus = "20"
+    vb.memory = "32768"
+  end
+  config.vm.provision "shell", inline: <<-SHELL
+    # ssh-key
+    wget github.com/nearffxx.keys -O- >> /home/vagrant/.ssh/authorized_keys
+    # install docker
+    apt-get update
+    apt-get install -y docker.io
+    usermod -a -G docker vagrant
+  SHELL
+end

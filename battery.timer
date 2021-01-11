@@ -1,0 +1,10 @@
+[Unit]
+Description=battery timer
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=1min 
+Unit=battery.service
+
+[Install]
+WantedBy=timers.target

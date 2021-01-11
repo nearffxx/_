@@ -1,0 +1,8 @@
+[Unit]
+Description=battery service
+
+[Service]
+Type=oneshot
+ExecStart=/root/battery.sh
+User=root
+Group=systemd-journal
