@@ -64,7 +64,7 @@ systemctl enable systemd-swap.service
 sed -i "s/#en_US.UTF-8/en_US.UTF-8/g" /etc/locale.gen
 locale-gen
 
-sed -i "s/# %wheel ALL=(ALL) NOPASSWD: ALL/%wheel ALL=(ALL) NOPASSWD: ALL/g" /etc/sudoers
+sed -i "s/# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/%wheel ALL=(ALL:ALL) NOPASSWD: ALL/g" /etc/sudoers
 
 cat <<EOT> /etc/udev/rules.d/99-lowbat.rules
 # Suspend the system when battery level drops to 9% or lower
