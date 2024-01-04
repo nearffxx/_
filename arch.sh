@@ -4,7 +4,7 @@
 # To test on qemu do:
 # pacman -S qemu ovmf
 # qemu-img create disk.img 10G
-# qemu-system-x86_64 -bios /usr/share/ovmf/x64/OVMF_CODE.fd -enable-kvm -net nic -net user -m 1G -cdrom archlinux-x86_64.iso -drive format=raw,file=disk.img
+# qemu-system-x86_64 -bios /usr/share/OVMF/OVMF_CODE.fd -enable-kvm -net nic -net user -m 1G -cdrom archlinux-x86_64.iso -drive format=raw,file=disk.img -display none -serial mon:stdio
 
 set -e
 
