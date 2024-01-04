@@ -52,10 +52,7 @@ echo "options cryptdevice=/dev/sda2:root:allow-discards root=/dev/mapper/root rw
 # system setup
 echo '''pacman -Syu --noconfirm sway swaylock waybar qutebrowser chromium foot rofi pavucontrol xorg-server-xwayland iw iwd dhcpcd
 pacman -Syu --noconfirm zsh wget git yajl vim neovim python-neovim openssh p7zip htop jdk-openjdk python-pip pulseaudio pamixer acpilight
-pacman -Syu --noconfirm systemd-swap noto-fonts noto-fonts-cjk ttf-font-awesome
-
-sed -i "s/#zswap_enabled=1/zswap_enabled=0/g" /etc/systemd/swap.conf
-sed -i "s/#zram_enabled=0/zram_enabled=1/g" /etc/systemd/swap.conf
+pacman -Syu --noconfirm zram-generator noto-fonts noto-fonts-cjk ttf-font-awesome
 
 systemctl enable iwd.service
 systemctl enable dhcpcd.service
