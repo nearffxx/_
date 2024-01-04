@@ -50,7 +50,7 @@ echo "options cryptdevice=/dev/sda2:root:allow-discards root=/dev/mapper/root rw
 ''' | arch-chroot /mnt
 
 # system setup
-echo '''pacman -Syu --noconfirm sway swaylock waybar qutebrowser chromium termite rofi pavucontrol xorg-server-xwayland iw iwd dhcpcd
+echo '''pacman -Syu --noconfirm sway swaylock waybar qutebrowser chromium foot rofi pavucontrol xorg-server-xwayland iw iwd dhcpcd
 pacman -Syu --noconfirm zsh wget git yajl vim neovim python-neovim openssh p7zip htop jdk-openjdk python-pip pulseaudio pamixer acpilight
 pacman -Syu --noconfirm systemd-swap noto-fonts noto-fonts-cjk ttf-font-awesome
 
@@ -108,12 +108,12 @@ mkdir -p .config/termite
 mkdir -p .config/qutebrowser
 
 cp /etc/sway/config .config/sway/config
-echo "include config+*" >> .config/sway/config
-sed -i "s/set \$term alacritty/set \$term termite/g" .config/sway/config
-sed -i "s/position top/position bottom/g" .config/sway/config
-sed -i "s/date +'%Y-%m-%d %l:%M:%S %p'/.config\/sway\/run.py/g" .config/sway/config
-wget https://raw.githubusercontent.com/nearffxx/_/master/sway/config+ -O .config/sway/config+
-wget https://raw.githubusercontent.com/nearffxx/_/master/sway/run.py -O .config/sway/run.py
+#echo "include config+*" >> .config/sway/config
+#sed -i "s/set \$term alacritty/set \$term termite/g" .config/sway/config
+#sed -i "s/position top/position bottom/g" .config/sway/config
+#sed -i "s/date +'%Y-%m-%d %l:%M:%S %p'/.config\/sway\/run.py/g" .config/sway/config
+#wget https://raw.githubusercontent.com/nearffxx/_/master/sway/config+ -O .config/sway/config+
+#wget https://raw.githubusercontent.com/nearffxx/_/master/sway/run.py -O .config/sway/run.py
 
 wget https://raw.githubusercontent.com/nearffxx/_/master/vimrc -O .vimrc
 wget https://raw.githubusercontent.com/nearffxx/_/master/zshrc -O .zshrc
