@@ -1,6 +1,6 @@
 #!/bin/sh
 # To install arch do:
-# wget https://raw.githubusercontent.com/nearffxx/_/master/arch.sh -O arch.sh; sh arch.sh
+# curl https://raw.githubusercontent.com/nearffxx/_/master/arch.sh -o arch.sh; sh arch.sh
 # To test on qemu do:
 # pacman -S qemu ovmf
 # qemu-img create disk.img 10G
